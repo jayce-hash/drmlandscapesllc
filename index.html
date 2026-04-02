@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRM Landscapes LLC | Valley View & Gainesville, TX</title>
+    <meta name="description" content="Family-owned and operated landscape company serving Valley View, Gainesville, and surrounding TX areas. Open 24/7. Call (940) 612-9106.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #2E5C31; /* Deep Leaf Green */
+            --secondary-color: #88A036; /* Bright Grass Green */
+            --accent-color: #D4A373; /* Earthy Brown/Tan */
+            --text-dark: #333333;
+            --text-light: #F4F4F9;
+            --bg-light: #FAFAFA;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: var(--primary-color);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1558904541-efa843a96f0f?auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons .btn {
+            margin: 0 10px;
+        }
+
+        /* Section Headings */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* About Section */
+        #about {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Services Section */
+        #services {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Banner */
+        .banner {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .banner h2 {
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .info-item h4 {
+            margin-bottom: 5px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #fff;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="#home"><h1>DRM <span>Landscapes</span> LLC</h1></a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:9406129106" class="btn" style="color:white;">(940) 612-9106</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Beautiful Landscapes for North Texas</h1>
+            <p>Family-owned and operated landscape company proudly serving Valley View, Gainesville, and the surrounding areas. We bring your outdoor vision to life.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Get a Free Estimate</a>
+                <a href="#services" class="btn btn-outline">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Beautiful landscaping">
+            </div>
+            <div class="about-text">
+                <div class="section-title" style="text-align: left;">
+                    <h2>About Us</h2>
+                    <p>Rooted in Valley View, TX</p>
+                </div>
+                <h3>Family Owned & Operated</h3>
+                <p>At DRM Landscapes LLC, we treat every property like it's our own. As a family-owned and operated business, we understand the value of hard work, reliability, and community. We specialize in serving the Gainesville and Valley View areas with top-tier landscape design, installation, and maintenance.</p>
+                <p>Whether you need a complete backyard makeover or regular lawn upkeep to combat the Texas heat, our team is equipped and ready. <strong>We are open 24/7</strong> to answer your calls and assist with any of your landscaping needs.</p>
+                <ul style="list-style: none; margin-top: 15px;">
+                    <li><i class="fas fa-check-circle" style="color: var(--secondary-color); margin-right: 10px;"></i> Local Texas Expertise</li>
+                    <li><i class="fas fa-check-circle" style="color: var(--secondary-color); margin-right: 10px;"></i> Honest, Transparent Pricing</li>
+                    <li><i class="fas fa-check-circle" style="color: var(--secondary-color); margin-right: 10px;"></i> Always Open & Available</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive care for your outdoor spaces</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Lawn Care & Maintenance</h3>
+                    <p>Mowing, edging, aeration, and seasonal cleanups to keep your yard looking pristine year-round.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tree"></i>
+                    <h3>Landscape Design</h3>
+                    <p>Custom planting beds, tree installation, and drought-tolerant Texas-native landscape architecture.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-hammer"></i>
+                    <h3>Hardscaping</h3>
+                    <p>Beautiful stone patios, retaining walls, walkways, and fire pits to elevate your outdoor living space.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-water"></i>
+                    <h3>Irrigation & Drainage</h3>
+                    <p>Sprinkler system repair, installation, and smart drainage solutions to protect your property.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="banner">
+        <div class="container">
+            <h2>Ready to transform your yard?</h2>
+            <p style="margin-bottom: 20px;">Contact us today for a free, no-obligation estimate.</p>
+            <a href="tel:9406129106" class="btn btn-outline" style="font-size: 1.2rem;"><i class="fas fa-phone"></i> (940) 612-9106</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>J L Drive<br>Valley View, TX<br>United States, Texas</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:9406129106">(940) 612-9106</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p><strong>Always Open</strong> - 24/7 Availability</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h4>Service Area</h4>
+                            <p>Gainesville, Valley View, and surrounding North Texas communities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <input type="email" id="email" placeholder="Your Email" required>
+                        <input type="tel" id="phone" placeholder="Your Phone Number">
+                        <textarea id="message" placeholder="How can we help you?" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> DRM Landscapes LLC. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set dynamic year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Form submission mock alert
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for reaching out to DRM Landscapes LLC! We will get back to you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
