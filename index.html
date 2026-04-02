@@ -131,8 +131,11 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            /* Updated to image_0.png, a beautiful close-up of a striped lawn */
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('image_0.png') center/cover;
+            background-color: var(--primary-color); /* Fallback color */
+            /* Highly reliable Pexels CDN image of a beautiful home and lawn */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/259648/pexels-photo-259648.jpeg?auto=compress&cs=tinysrgb&w=1920');
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             text-align: center;
@@ -200,6 +203,7 @@
             width: 100%;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #ddd; /* Fallback placeholder color */
         }
 
         /* Services Section */
@@ -376,7 +380,7 @@
     <section id="about">
         <div class="container about-grid">
             <div class="about-image">
-                <img src="image_1.png" alt="A beautiful view of a completed landscape design featuring stone pathways and native plants.">
+                <img src="https://images.pexels.com/photos/298246/pexels-photo-298246.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Beautifully landscaped garden with stone pathways and native plants.">
             </div>
             <div class="about-text">
                 <div class="section-title" style="text-align: left;">
